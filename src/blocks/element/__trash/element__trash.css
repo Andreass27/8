@@ -1,5 +1,5 @@
 .element__trash{
-background-image: url(/image/Trash.svg);
+background-image: url(../../../image/trash.svg);
 min-width: 18px;
 min-height: 19px;
 background-color: transparent;

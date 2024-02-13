@@ -1,3 +1,4 @@
+
 const validationData = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',

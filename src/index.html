@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <rel="stylesheet" href="/vendor/index.css">
-  <rel="stylesheet" href="/vendor/normalize.css">
   <title>Mesto Russia</title>
 </head>
 <body class="page">
     <header class="header">
-        <img class="header__logo" src="/image/logo1.svg" alt="logo"><img>
+        <div class="header__logo"></div>
     </header>
 <section class="profile">
     <div class="profile__avatar"></div>
@@ -23,21 +21,20 @@
     <button class="profile__add-button" type="button" id="addButton"></button>
 </section>
 
-<section class="elements">
-    <template id="card__template">
-        <div class="element__template">
-          <img class="element__img"></img>
-          <div class="element__info">
-            <button class="element__trash" type="button" aria-label="Удалить"></button>
-            <h2 class="element__name"></h2>
-            <button class="element__like" type="button" aria-label="Лайк"></button>
-          </div>
-        </div>
-      </template>
-</section>
+<section class="elements"></section>
 <footer class="footer">
     <P class="footer__author">© 2020 Mesto Russia</P>
 </footer>
+<template id="card__template">
+  <div class="element__template">
+    <img class="element__img"></img>
+    <div class="element__info">
+      <button class="element__trash" type="button" aria-label="Удалить"></button>
+      <h2 class="element__name"></h2>
+      <button class="element__like" type="button" aria-label="Лайк"></button>
+    </div>
+  </div>
+</template>
     </div>
     <div class="popup popup_type_profile" >
         <div class="popup__container">
@@ -57,7 +54,7 @@
           <img class="popup__image">
           <button class="popup__close" type="button" aria-label="Закрытие формы">
           </button>
-          <p class="popup__imgname"></p>
+          <p class="popup__imgName"></p>
         </div>
       </div>
 
@@ -66,12 +63,34 @@
             <button class="popup__close" type="button" aria-label="Закрытие формы"></button>
           <form class="popup__form" method="post" id="addform" name="addform" novalidate>
             <h2 class="popup__name">Новое место</h2>
-            <input type="text" class="popup__input" id="popup__place" placeholder="название" required maxlength="30" minlength="2">
+            <input type="text" class="popup__input" id="popup__place" placeholder="название" name="addFormName" required maxlength="30" minlength="2">
             <span class="popup__place-error popup__input-error"></span>
-            <input type="url" class="popup__input" id="popup__link" placeholder="ссылка на картинку" required> 
+            <input type="url" class="popup__input" name="addLinkUrl" id="popup__link" placeholder="ссылка на картинку" required> 
             <span class="popup__link-error popup__input-error"></span>
             <button class="popup__button" type="submit">Создать</button>
           </form>
+        </div>
+      </div>
+
+      <div class="popup popup__avatar">
+      <div class ="popup__container">
+      <button class="popup__close" type="button" aria-label="Закрытие формы">
+      </button>
+      <form class="popup__form" method="post" id="avatarForm" name="avatarForm" novalidate>
+        <h2 class="popup__name"Обновить аватар></h2>
+        <input class="popup__input" type="url" id="avatar" name="avatar" placeholder="Ссылка на новую аватарку" required>
+        <span class="popup__avatar-error popup__input-error"></span>
+        <button class="popup__button" type="submit" aria-label="да">Сохранить</button>
+      </form>
+      </div>
+      </div>
+      <div class="popup popup__delete_avatar">
+        <div class="popup__container">
+        <button class="popup__close" type="button" aria-label="Закрытие формы"></button>
+        <form class="popup__form" method="post" name="deleteavatar">
+          <h2 class="popup__name">Вы уверены?</h2>
+          <button class="popup__button popup__button-delete" type="submit" aria-label="Да">Да</button>
+        </form>
         </div>
       </div>
 </body>

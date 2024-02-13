@@ -73,7 +73,6 @@ enableValidation = () =>{
     this._setEventListeners();
     this._resetInputError();
 };
-
 }
 
 

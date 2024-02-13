@@ -23,8 +23,10 @@ const profileName = document.querySelector('.profile__name');
 const profileResearcher = document.querySelector('.profile__researcher');
 const popupClosebigImage = document.querySelector('.popup_type_bigImage');
 
+export {profileName,addCardsForm,jobInput,profileEditForm,profileResearcher,nameInput,profileEditButton,profileAddButton}
+
 // закрыть попапы на ESC
-function keyHandler(e){
+ function keyHandler(e){
   if(e.key === 'Escape'){
     const popopOpen = document.querySelector('.popup__open');
     closePopup(popopOpen)
@@ -57,24 +59,11 @@ function submitprofileEditform (e) {
   profileResearcher.textContent = jobInput.value;
   closePopup(popupProfile);
 };
-//добавление карт
-function addCards(e){ 
-  e.preventDefault();
-  const card = new Card(InputPlace.value, InputLink.value, '#card__template');
-  const cardElement = card.renderCard()
-  Elements.prepend(cardElement);
-  closePopup(popupAddCard);
-};
 
 const editFormValid = new FormValidator(validationData,profileEditForm);
 const addformValid = new FormValidator(validationData,addCardsForm);
 
- initialCards.forEach(function(item){
-  const card = new Card(item.name , item.link ,'#card__template');
-  const cardElement = card.renderCard()
-  Elements.prepend(cardElement);
-  closePopup(popupAddCard)
-  });
+
 
 profileEditButton.addEventListener('click', function() { //редактор профиля 
   nameInput.value = profileName.textContent;
@@ -101,7 +90,7 @@ editProfileCloseButton.addEventListener('click', function(){
   editFormValid.enableValidation()
   closePopup(popupProfile)
 }); 
-addCardsForm.addEventListener('submit', addCards);
+
 
 
 

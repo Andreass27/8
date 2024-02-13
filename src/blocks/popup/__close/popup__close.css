@@ -6,9 +6,8 @@
     right: 10px;
     font-size: 23px;
     cursor: pointer;
-   
     border: none;
-    background-image: url(/image/Close\ Icon.svg);
+    background-image: url(../../../image/closeIcon.svg);
     min-width: 32px;
     min-height: 32px;
     flex-shrink: 0;
@@ -31,6 +30,8 @@
     min-width: 20px;
     min-height: 20px;
     right: 0;
+    top: -22px;
+    right: -22px;
     
     }
     }
